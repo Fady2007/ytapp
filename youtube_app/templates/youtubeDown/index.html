@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube downloader</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static' , filename='css/main.css') }}"
+  />
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static' , filename='css/all.min.css') }}"
+  />
+  <body>
+    <h2 id="errMsg"></h2>
+
+    <div class="main">
+      <h1 class="intro">
+        <i class="fa-brands fa-youtube"></i> Youtube Downloader
+      </h1>
+      <input type="text" id="url" placeholder="Yotube URL.." />
+      <div class="thDiv hidden">
+        <div class="thImgDiv">
+          <img src="" alt="" class="thImg" />
+        </div>
+        <div>
+          <div>
+            <h1 class="title"></h1>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Select Quality: 360p</button>
+            <div class="dropdown-content">
+              <a href="#" data-quality="360p">360p</a>
+              <a href="#" data-quality="480p">480p</a>
+              <a href="#" data-quality="720p">720p</a>
+              <a href="#" data-quality="1080p">1080p</a>
+              <a href="#" data-quality="audio">audio</a>
+            </div>
+          </div>
+          <div>
+            <p class="note">
+              <i class="fa-regular fa-circle-question"></i>
+              If Can't download the video try change the quality.
+            </p>
+          </div>
+        </div>
+      </div>
+      <button id="runButton">
+        <i class="fa fa-download"></i> Download Video
+      </button>
+      <div class="loadDiv hidden">
+        <div></div>
+        <div class="wait3"></div>
+        <div class="wait6"></div>
+      </div>
+    </div>
+    <script src="{{ url_for('static' , filename='js/tube.js')}}"></script>
+    <script src="{{ url_for('static' , filename='js/all.min.js')}}"></script>
+  </body>
+</html>
