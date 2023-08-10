@@ -43,18 +43,54 @@ body {
   font-family: var(--family);
   font-weight: 400;
   border-radius: 6px;
-  position: absolute;
+  position: fixed;
   top: 0px;
   animation: fade-out 6s forwards;
   z-index: 2;
   box-shadow: 0 0 7px 4px #ddd;
 }
 
+.warnMsg {
+  display: flex !important;
+  color: rgb(122, 65, 0);
+  background-color: rgb(255, 245, 204);
+  padding: 12px;
+  border: 1px solid #ccb800;
+  display: none;
+  font-family: var(--family);
+  font-weight: 400;
+  border-radius: 12px;
+  position: fixed;
+  top: 0px;
+  animation: fade-out 6s forwards;
+  z-index: 2;
+  box-shadow: 0 0 7px 4px #ddd;
+  font-size: 1.2em;
+  align-items: center;
+  gap: 10px;
+}
+
+.warnMsg svg {
+  color: #cc3000;
+  font-size: 2em;
+}
+
 .note {
   color: #8b8b8b;
   font-weight: 500;
   font-family: var(--family);
+  font-size: 1em;
+}
+
+.author {
+  color: #8b8b8b;
   font-size: 1.1em;
+  font-family: var(--family);
+}
+
+.author.siz {
+  color: #8b8b8b;
+  font-size: 1em;
 }
 
 .sucMsg {
@@ -67,7 +103,7 @@ body {
   font-family: var(--family);
   font-weight: 400;
   border-radius: 6px;
-  position: absolute;
+  position: fixed;
   top: 0px;
   animation: fade-out 6s forwards;
   z-index: 2;
@@ -215,16 +251,97 @@ body {
   text-decoration: none;
   display: block;
   font-family: var(--family);
+  transition: 0.3s;
 }
 
 /* Dropdown content items on hover */
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
+  background-color: #cc3000;
+  color: white;
 }
 
 /* Show dropdown content when hovering over dropdown container */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.loadbar {
+  padding: 12px;
+  background-color: #adadad;
+  animation: opa 1s ease infinite alternate;
+  border-radius: 10px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  font-family: var(--family);
+}
+
+.novis {
+  visibility: hidden;
+}
+
+@keyframes opa {
+  to {
+    opacity: 0.4;
+  }
+}
+
+.linkC {
+  color: #db4900;
+  font-size: 1em;
+  font-family: var(--family);
+  text-decoration: none;
+  transition: 0.1s;
+}
+
+.linkC:hover {
+  color: hsl(29, 100%, 50%);
+}
+
+.info {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #ff9900;
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px 2px #ff9900;
+  z-index: 3;
+}
+
+.info svg {
+  font-size: 1.5em;
+}
+
+.info:hover {
+  background-color: #ff6600;
+  box-shadow: 0 0 12px 2px #ff6600;
+}
+
+.info:active {
+  transform: translateY(3px);
+}
+
+.copyright {
+  color: #434343;
+  position: fixed;
+  bottom: 10px;
+  left: 20px;
+  transition: 0.3s;
+  font-family: var(--family);
+  z-index: 3;
+}
+
+.co-or {
+  color: rgb(255, 72, 0);
 }
 
 @keyframes up-and-down {
@@ -249,5 +366,11 @@ body {
 @media (max-width: 680px) {
   .thDiv {
     flex-direction: column;
+  }
+  .errMsg {
+    font-size: 1.1em;
+  }
+  .thImgDiv {
+    flex-basis: fit-content;
   }
 }

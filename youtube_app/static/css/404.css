@@ -1,0 +1,33 @@
+body {
+  background: rgb(3, 0, 34);
+  color: white;
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  height: 100vh; /* Set container height to full viewport height */
+}
+
+.centered-items {
+  font-family: math, "Arial";
+  display: flex;
+  flex-direction: column; /* Items will be centered vertically in a column */
+  align-items: center; /* Center items horizontally */
+}
+.ic {
+  font-size: 5em;
+  color: rgb(255, 196, 0);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+  font-size: 1.1em;
+}
+
+a:hover {
+  color: rgb(216, 237, 255);
+}

@@ -1,7 +1,7 @@
 import random
 import requests
 import time
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import numpy as np
 from module import *
 

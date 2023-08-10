@@ -21,16 +21,48 @@ def on_progress(stream, chunk, bytes_remaining):
     print(progress_string)
 
 
+download_path = os.path.join(os.path.expanduser("~"), "Downloads")
+
+
 def download_video(link, resolution):
-    YouTube(
-        link, on_complete_callback=on_complete, on_progress_callback=on_progress
-    ).streams.get_by_resolution(resolution).download(r"C:\Users\jerom\Downloads")
+    try:
+        yt = YouTube(link)
+        video_stream = yt.streams.filter(res=resolution).first()
+
+        if not video_stream:
+            print(f"No {resolution} resolution available for the video.")
+            return
+
+        print(f"Downloading: {yt.title} ({resolution})")
+        video_stream.download(output_path=download_path)
+        print("Download completed!")
+
+    except Exception as e:
+        print(f"Error: {e}")
+
+
+def get_video_size(url):
+    try:
+        yt = YouTube(url)
+        video_stream = (
+            yt.streams.get_lowest_resolution()
+        )  # Get the highest resolution stream
+
+        if not video_stream:
+            return "Video stream not available."
+
+        video_size_bytes = video_stream.filesize
+        video_size_mb = video_size_bytes / (1024 * 1024)  # Convert bytes to megabytes
+
+        return f"{video_size_mb:.2f}"
+    except Exception as e:
+        return f"Error: {e}"
 
 
 def download_audio_video(link):
     YouTube(
         link, on_complete_callback=on_complete, on_progress_callback=on_progress
-    ).streams.get_audio_only().download(r"C:\Users\jerom\Downloads")
+    ).streams.get_audio_only().download(output_path=download_path)
 
 
 def download_path_video(link, path, resolution="360p"):

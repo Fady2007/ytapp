@@ -1,4 +1,4 @@
-from powerful import Flask, render_template, download_video, request
+from powerful import Flask, render_template, request, get_video_size, jsonify
 import subprocess
 
 app = Flask(__name__, static_folder="static")
@@ -17,5 +17,17 @@ def download():
     return result
 
 
+@app.route("/size")
+def sizePage():
+    video_url = request.args.get("value")
+    video_size = get_video_size(video_url)
+    return jsonify({"size": video_size})
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html")
+
+
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, port=3000)
