@@ -13,19 +13,13 @@
     rel="stylesheet"
     href="{{ url_for('static' , filename='css/all.min.css') }}"
   />
-  <body>
+  <body id="bodytube">
     <h2 id="errMsg"></h2>
+    <a href="/about">
     <div class="info">
       <i class="fa-solid fa-question"></i>
     </div>
-
-    <div class="copyright">
-      <p>
-        Copyright &copy; <span></span> <br />Created by
-        <i class="fa fa-heart co-or"> </i>
-        Fady
-      </p>
-    </div>
+  </a>
 
     <div class="main">
       <h1 class="intro">
@@ -73,8 +67,20 @@
         <div class="wait6"></div>
       </div>
     </div>
+
+    <div class="copyright">
+      <p>
+        &copy; <span></span> Created by
+        <i class="fa fa-heart co-or"> </i>
+        Fady
+      </p>
+    </div>
     <script
       src="{{ url_for('static' , filename='js/tube.js')}}"
+      type="module"
+    ></script>
+    <script
+      src="{{ url_for('static' , filename='js/qr.js')}}"
       type="module"
     ></script>
     <script

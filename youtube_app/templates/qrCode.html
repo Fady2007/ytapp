@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qr code generator</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static' , filename='css/main.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static' , filename='css/all.min.css') }}"
+    />
+  </head>
+  <body>
+    <h2 id="errMsg"></h2>
+    <div class="copyright">
+      <p>
+        &copy; <span></span> Created by
+        <i class="fa fa-heart co-blu"> </i>
+        Fady
+      </p>
+    </div>
+    <div class="main">
+      <h1 class="intro" style="color: #005288">
+        <i class="fa fa-qrcode"></i> QRCode generator
+      </h1>
+      <input
+        type="text"
+        id="url"
+        style="border: 1px solid #005288; color: #005288"
+        placeholder="Enter Text or URL.."
+      />
+      <center>
+        <div class="thDiv hidden">
+          <div class="thImgDiv">
+            <img src="" alt="" class="thImg" />
+            <br />
+            <br />
+            <button class="btn-blu-o" data-down="downBtn">
+              <i class="fa fa-download"></i> Download
+            </button>
+          </div>
+        </div>
+      </center>
+      <div style="display: flex; gap: 10px">
+        <button class="btn-blu" data-gen="genBtn">
+          <i class="fa fa-qrcode"></i> Generate
+        </button>
+        <button class="btn-blu"><i class="fa fa-upload"></i> Upload QR</button>
+      </div>
+    </div>
+    <script
+      src="{{ url_for('static' , filename='js/tube.js')}}"
+      type="module"
+    ></script>
+    <script
+      src="{{ url_for('static' , filename='js/qrCode.js')}}"
+      type="module"
+    ></script>
+    <script src="{{ url_for('static' , filename='js/all.min.js')}}"></script>
+  </body>
+</html>

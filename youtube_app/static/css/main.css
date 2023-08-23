@@ -8,19 +8,21 @@
   box-sizing: border-box;
 }
 
-body {
+#bodytube {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .main {
+  box-sizing: border-box;
   margin: 40px auto;
   position: relative;
   padding: 12px;
   background-color: #eee;
   border-radius: 10px;
-  width: 140vh;
+  width: 140dvh;
   box-shadow: 0 0 5px 2px #ddd;
   display: flex;
   flex-direction: column;
@@ -84,7 +86,7 @@ body {
 
 .author {
   color: #8b8b8b;
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-family: var(--family);
 }
 
@@ -150,6 +152,47 @@ body {
   background-color: rgb(255, 106, 20);
 }
 
+.btn-blu {
+  width: 100%;
+  padding: 12px;
+  color: white;
+  background-color: #005288;
+  transition: 0.3s;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2em;
+  border: none;
+  font-family: var(--family);
+}
+.btn-blu:hover {
+  background-color: #006ab1;
+}
+.btn-blu:active {
+  transform: translateY(3px);
+}
+
+.btn-blu-o {
+  width: 100%;
+  padding: 12px;
+  color: #005288;
+  background-color: transparent;
+  transition: 0.3s;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2em;
+  border: none;
+  font-family: var(--family);
+  border: 1px solid;
+}
+
+.btn-blu-o:hover {
+  background-color: #005288;
+  color: white;
+}
+.btn-blu-o:active {
+  transform: translateY(3px);
+}
+
 .thDiv {
   display: flex;
   gap: 20px;
@@ -162,9 +205,9 @@ body {
   color: #434343;
   font-family: var(--family);
   font-weight: 500;
-  text-overflow: ellipsis;
+  /* text-overflow: ellipsis; */
   overflow: hidden;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 .thImgDiv {
@@ -276,6 +319,10 @@ body {
   font-family: var(--family);
 }
 
+.opacityAni {
+  animation: opa 1s ease infinite alternate;
+}
+
 .novis {
   visibility: hidden;
 }
@@ -306,7 +353,7 @@ body {
   color: white;
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  left: 20px;
   transition: 0.3s;
   cursor: pointer;
   overflow: hidden;
@@ -333,7 +380,7 @@ body {
 .copyright {
   color: #434343;
   position: fixed;
-  bottom: 10px;
+  top: 0px;
   left: 20px;
   transition: 0.3s;
   font-family: var(--family);
@@ -342,6 +389,10 @@ body {
 
 .co-or {
   color: rgb(255, 72, 0);
+}
+
+.co-blu {
+  color: #005288 !important;
 }
 
 @keyframes up-and-down {
@@ -362,15 +413,47 @@ body {
     opacity: 0;
   }
 }
+@media (max-width: 1086px) {
+  .main {
+    width: 130dvh;
+  }
+}
+
+@media (max-width: 995px) {
+  .main {
+    width: 100dvh;
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    width: 80dvh;
+  }
+}
 
 @media (max-width: 680px) {
   .thDiv {
     flex-direction: column;
+  }
+  .main {
+    width: 70dvh;
   }
   .errMsg {
     font-size: 1.1em;
   }
   .thImgDiv {
     flex-basis: fit-content;
+  }
+}
+
+@media (max-width: 540px) {
+  .main {
+    width: 43dvh;
+  }
+  .main .intro {
+    font-size: 1.5em;
+  }
+  input {
+    font-size: 1em !important;
   }
 }

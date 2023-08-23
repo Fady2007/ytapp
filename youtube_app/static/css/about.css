@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Rubik:ital,wght@0,500;0,600;1,400&display=swap");
+
+:root {
+  --family: "Rubik", sans-serif;
+}
+
+body {
+  display: block !important;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.appName {
+  text-align: center;
+  font-family: var(--family);
+  color: white;
+}
+
+.text_title {
+  font-family: var(--family);
+  color: #ffffff !important;
+}
+
+.text_title.back {
+  font-family: var(--family);
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  color: #ffffff !important;
+}
+
+.appinfo h2 {
+  font-family: math;
+}
+
+header {
+  padding: 12px;
+  height: 120px;
+  font-family: var(--family);
+  background-color: rgb(255, 36, 7);
+  box-shadow: 0 0 6px 1px #ddd;
+}
+
+a {
+  text-decoration: none;
+  color: #434343;
+  transition: 0.2s;
+  font-weight: 300;
+}
+
+a:hover {
+  color: #6d6d6d !important;
+}
+
+
+.main {
+  width: fit-content !important;
+  padding: 20px !important;
+  transform: translateY(-70px);
+  background-color: rgb(255, 88, 27) !important;
+  color: white !important;
+}

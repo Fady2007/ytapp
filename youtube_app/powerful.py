@@ -178,6 +178,11 @@ def extendLists(li1: list, *lis: list):
     return li1
 
 
+# do Input
+def doInp(val=""):
+    return input(val)
+
+
 # OOP
 class Member:
     def __init__(self, firstName, lastName, age, gender):
@@ -190,3 +195,20 @@ class Member:
         return (
             f"Full name: {self.fname} {self.lname}\nAge: {self.age}\nGender: {self.gen}"
         )
+
+
+def p(val):
+    print(val)
+
+
+def sayHello():
+    print(
+        """
+  ____                         __       _               
+ |  _ \ _____      _____ _ __ / _|_   _| |  _ __  _   _ 
+ | |_) / _ \ \ /\ / / _ \ '__| |_| | | | | | '_ \| | | |
+ |  __/ (_) \ V  V /  __/ |  |  _| |_| | |_| |_) | |_| |
+ |_|   \___/ \_/\_/ \___|_|  |_|  \__,_|_(_) .__/ \__, |
+                                           |_|    |___/                                                                                                    
+    """
+    )
